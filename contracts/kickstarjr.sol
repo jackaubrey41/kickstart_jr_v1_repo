@@ -91,8 +91,10 @@ contract Kickstart {
         // require approvalCount >= numContributors/2. Como mínimo necesitamos el voto afirmativo de la mitad +1 de los contributors.
         require (requests[requests.length-1].approvalCount >= 1+numContributors/2);
         //send money to recipient (vendor). Public transaccion non payable.
-        // la tranferencia la realiza en wei pero nuestra anotación se refiere a ethers 1 ether = 1*10^18 wei
-        requests[requests.length-1].recipient.transfer (requests[requests.length-1].amount*1000000000000000000);
+        // En Remix la tranferencia la realiza en wei pero nuestra anotación se refiere a ethers 1 ether = 1*10^18 wei
+        // requests[requests.length-1].recipient.transfer (requests[requests.length-1].amount*1000000000000000000);
+        // En Visual studio utiliza unidad Ether
+        requests[requests.length-1].recipient.transfer (requests[requests.length-1].amount);
         // declara Request completado cambiando el estado del variable complete a true 
         requests[requests.length-1].complete = true;
     }
