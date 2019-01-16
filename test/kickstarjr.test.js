@@ -81,25 +81,5 @@ describe ("Kickstart", ()=> {
     });
 
 
-    /*
-    it ("contribute investor OK", async() => {
-        await kickstartjr.methods.contribute("Marc").send ({ from: accounts[1], gas: "1000000", value :"20000000000000000000"}); //faltan los Ethers¡¡
-        const name = kickstartjr.investorsMap[accounts[1]].name ;
-        assert.equal (name,"Marc");
-});
-
-/*
-    it ("has a default message", async() => {
-     const message = await inbox.methods.getMessage().call(); // el call no necesita parámetros
-     assert.equal (message, "Hi there");    
-    });
-    
-    it ("can change the message", async() => {
-    await inbox.methods.setMessage("bye").send({from: accounts[0]}); // enviamos una transacción
-    const message = await inbox.methods.getMessage().call();
-    assert.equal (message, "bye"); 
-    });
-
-*/
 
 });
